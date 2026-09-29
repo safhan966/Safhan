@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Websites for restaurants | Web designer in Karachi</title>
+<meta name="description" content="I build simple, fast websites for restaurants and food shops. Menu, hours, phone and map on one page. Karachi and UK.">
+<meta name="theme-color" content="#0b1b3a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💻%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0b1b3a; --navy-2: #071229; --teal: #16c2ae; --teal-d: #0e8f80;
+    --white: #ffffff; --bg: #f6f8fb; --ink: #14213d; --muted: #5b6784; --line: #dfe5ef;
+    --display: Sora, "Segoe UI", system-ui, sans-serif;
+    --body: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font: 400 1.05rem/1.65 var(--body); color: var(--ink); background: var(--white); overflow-x: hidden; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.25rem; }
+  h1, h2, h3 { font-family: var(--display); margin: 0; line-height: 1.1; letter-spacing: -.02em; }
+
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(11,27,58,.96); color: #fff; padding-top: env(safe-area-inset-top, 0px); backdrop-filter: blur(6px); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 60px; gap: 1rem; }
+  .logo { font: 700 1.15rem var(--display); text-decoration: none; }
+  .logo span { color: var(--teal); }
+  nav ul { display: flex; gap: 1.3rem; list-style: none; margin: 0; padding: 0; font-weight: 500; font-size: .95rem; }
+  nav ul a { text-decoration: none; opacity: .85; } nav ul a:hover { opacity: 1; color: var(--teal); }
+
+  /* Hero */
+  .hero { background: var(--navy); color: #fff; padding: 5rem 0 5.5rem; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; width: 520px; height: 520px; right: -160px; top: -160px; background: radial-gradient(circle, rgba(22,194,174,.35), transparent 65%); animation: pulse 6s ease-in-out infinite; }
+  @keyframes pulse { 50% { transform: scale(1.15); opacity: .8; } }
+  .hero .wrap { position: relative; }
+  .hero h1 { font-size: clamp(2.5rem, 9vw, 5rem); font-weight: 800; max-width: 14ch; }
+  .swap { display: block; height: 1.15em; overflow: hidden; color: var(--teal); }
+  .swap span { display: block; animation: swap 10s cubic-bezier(.7,0,.3,1) infinite; }
+  @keyframes swap { 0%,18% { transform: translateY(0); } 25%,43% { transform: translateY(-100%); } 50%,68% { transform: translateY(-200%); } 75%,93% { transform: translateY(-300%); } 100% { transform: translateY(-400%); } }
+  .hero p { max-width: 42ch; font-size: 1.2rem; color: #c3cee6; margin: 1.4rem 0 2rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+  .btn { display: inline-block; padding: .85rem 1.6rem; border-radius: 10px; font-weight: 600; text-decoration: none; transition: transform .15s, background .15s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.solid { background: var(--teal); color: var(--navy-2); }
+  .btn.solid:hover { background: #fff; }
+  .btn.line { border: 2px solid rgba(255,255,255,.35); color: #fff; }
+  .btn.line:hover { border-color: var(--teal); }
+  .rise { opacity: 0; transform: translateY(26px); animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
+  .d1 { animation-delay: .1s; } .d2 { animation-delay: .25s; } .d3 { animation-delay: .4s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+
+  section { padding: 4.5rem 0; }
+  .alt { background: var(--bg); }
+  .head { margin-bottom: 2.2rem; max-width: 40rem; }
+  h2 { font-size: clamp(1.9rem, 5vw, 2.7rem); font-weight: 800; }
+  .head p { color: var(--muted); margin: .7rem 0 0; }
+
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 1.6rem; transition: transform .25s, box-shadow .25s; }
+  .card:hover { transform: translateY(-5px); box-shadow: 0 18px 36px rgba(11,27,58,.12); }
+  .card h3 { font-size: 1.25rem; margin-bottom: .4rem; }
+  .card p { margin: 0; color: var(--muted); }
+  .ico { font-size: 1.9rem; display: block; margin-bottom: .6rem; }
+
+  /* Work */
+  .one { grid-template-columns: minmax(0, 520px); }
+  .work { padding: 0; overflow: hidden; }
+  .shot { aspect-ratio: 16/9; display: grid; place-items: center; font: 800 1.9rem var(--display); letter-spacing: -.02em; }
+  .s1 { background: linear-gradient(135deg, #4a0f12, #7a1c20); color: #f2b632; }
+  .s2 { background: linear-gradient(135deg, #0e3b2c, #17614a); color: #ffc72c; }
+  .work .body { padding: 1.4rem 1.6rem 1.6rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+  .tags span { font-size: .8rem; font-weight: 600; background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: .15rem .7rem; color: var(--muted); }
+  .note { margin-top: 1.4rem; font-size: .92rem; color: var(--muted); }
+
+  /* Steps */
+  .step b { display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--navy); color: var(--teal); font: 700 1rem var(--display); margin-bottom: .8rem; }
+
+  /* Pricing */
+  .price { font: 800 2.6rem var(--display); color: var(--navy); margin: .3rem 0 .8rem; }
+  .price small { font: 500 .95rem var(--body); color: var(--muted); }
+  .list { list-style: none; padding: 0; margin: 0 0 1.2rem; }
+  .list li { padding: .35rem 0 .35rem 1.6rem; position: relative; }
+  .list li::before { content: "✓"; position: absolute; left: 0; color: var(--teal-d); font-weight: 700; }
+  .card.pop { border: 2px solid var(--teal); }
+  .uk { margin: -.5rem 0 1rem; font-weight: 600; color: var(--muted); }
+  .extras { margin-top: 1.25rem; }
+  .extras .list { margin: .6rem 0 0; }
+
+  /* Contact */
+  .contact { background: var(--navy); color: #fff; text-align: center; }
+  .contact p { color: #c3cee6; max-width: 44ch; margin: 1rem auto 2rem; }
+  .contact .actions { justify-content: center; }
+  footer { background: var(--navy-2); color: #8d9bbd; padding: 1.4rem 0 calc(1.4rem + env(safe-area-inset-bottom, 0px)); text-align: center; font-size: .9rem; }
+
+  .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 760px) {
+    nav ul { gap: .9rem; font-size: .88rem; }
+    .grid3, .grid2, .one { grid-template-columns: 1fr; }
+    section { padding: 3.25rem 0; }
+    .hero { padding: 3.5rem 0 4rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+    .rise, .js .reveal { opacity: 1; transform: none; }
+    .swap { height: auto; } .swap span:not(:first-child) { display: none; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <!-- Name is set. -->
+    <a class="logo" href="#top">Safhan<span>.</span></a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#pricing">Prices</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1 class="rise d1">A website for your
+      <span class="swap" aria-label="restaurant">
+        <span>burger shop.</span><span>biryani house.</span><span>kabab stall.</span><span>restaurant.</span><span>burger shop.</span>
+      </span>
+    </h1>
+    <p class="rise d2">Customers search on Google before they visit. I build a fast, simple page with your menu, hours, phone and map, so they find you and call.</p>
+    <div class="actions rise d3">
+      <a class="btn solid" href="#contact">Get a free sample</a>
+      <a class="btn line" href="#work">See my work</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="work">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>Recent work</h2>
+        <p>A sample site for a famous Karachi food shop.</p>
+      </div>
+      <div class="grid2 one">
+        <!-- EDIT: after you publish each site, wrap the card in <a href="YOUR-LINK"> or add a link button. -->
+        <article class="card work reveal">
+          <div class="shot s2">Ismail Burger</div>
+          <div class="body">
+            <h3>Ismail Burger, Lyari</h3>
+            <p>A 3-page site: Home, Menu and Contact, with reviews, opening hours and a map.</p>
+            <div class="tags"><span>3 pages</span><span>Reviews</span><span>Google-ready</span></div>
+          </div>
+        </article>
+      </div>
+      <p class="note reveal">These are concept samples made to show my style. They are not official sites.</p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>What you get</h2>
+      </div>
+      <div class="grid3">
+        <div class="card reveal"><span class="ico">📱</span><h3>Looks great on phones</h3><p>Most customers use their phone. Your site fits every screen.</p></div>
+        <div class="card reveal"><span class="ico">📍</span><h3>Easy to find</h3><p>Your address, map and opening hours, ready for Google to show.</p></div>
+        <div class="card reveal"><span class="ico">📞</span><h3>One tap to call</h3><p>A Call button and a directions button on every phone.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>How it works</h2>
+      </div>
+      <div class="grid3">
+        <div class="card step reveal"><b>1</b><h3>Free sample</h3><p>I build a sample with your shop's real details. You look at it first.</p></div>
+        <div class="card step reveal"><b>2</b><h3>You choose</h3><p>Like it? I add your photos and prices, and fix anything you want.</p></div>
+        <div class="card step reveal"><b>3</b><h3>Go online</h3><p>Your site goes live with its own link. You pay after you are happy.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="pricing">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>Simple prices</h2>
+        <p>Choose 1, 2 or 3 pages. Hosting is included. No hidden costs.</p>
+      </div>
+      <div class="grid3">
+        <div class="card reveal">
+          <h3>Starter: 1 page</h3>
+          <div class="price">Rs. 5,000</div>
+          <p class="uk">£150 in the UK</p>
+          <ul class="list"><li>One-page website</li><li>Menu, hours, phone and map</li><li>Your photos and prices</li><li>1 free change</li></ul>
+        </div>
+        <div class="card reveal">
+          <h3>Standard: 2 pages</h3>
+          <div class="price">Rs. 8,000</div>
+          <p class="uk">£220 in the UK</p>
+          <ul class="list"><li>Home page and Menu page</li><li>Map, hours and Call button</li><li>Your photos and prices</li><li>2 free changes</li></ul>
+        </div>
+        <div class="card pop reveal">
+          <h3>Business: 3 pages</h3>
+          <div class="price">Rs. 12,000</div>
+          <p class="uk">£300 in the UK</p>
+          <ul class="list"><li>Home, Menu and Contact pages</li><li>Photo gallery and reviews</li><li>Ready for Google to show you</li><li>3 free changes</li></ul>
+        </div>
+      </div>
+      <div class="card extras reveal">
+        <h3>Extras</h3>
+        <ul class="list">
+          <li>Extra page: Rs. 3,000 or £80</li>
+          <li>Change after launch: Rs. 500 or £15</li>
+          <li>Custom drawings for your shop: Rs. 1,500 or £40</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap reveal">
+      <h2>Want a free sample?</h2>
+      <p>Send me your shop's name and I will build a sample for you. No pressure and no payment to look.</p>
+      <div class="actions">
+        <!-- EDIT: WhatsApp and email are already set. -->
+        <a class="btn solid" href="https://wa.me/923222949526">WhatsApp me</a>
+        <a class="btn line" href="mailto:safhanraza120@gmail.com">safhanraza120@gmail.com</a>
+        <a class="btn line" href="tel:+923222949526">Call 0322-2949526</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; Safhan. Web designer, Karachi.</footer>
+
+<script>
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  } else { els.forEach(function (el) { el.classList.add('in'); }); }
+</script>
+</body>
+</html>
